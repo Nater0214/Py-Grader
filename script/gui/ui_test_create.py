@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'startup.ui'
+## Form generated from reading UI file 'test_create.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
@@ -22,7 +22,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(200, 140)
+        main_window.resize(528, 300)
         main_window.setStyleSheet(u"/*\n"
 "    I did not create this\n"
 "    This style was created by sommerc\n"
@@ -522,49 +522,43 @@ class Ui_main_window(object):
 "}")
         self.main_frame = QFrame(main_window)
         self.main_frame.setObjectName(u"main_frame")
-        self.main_frame.setGeometry(QRect(0, 0, 200, 140))
+        self.main_frame.setGeometry(QRect(0, 0, 241, 161))
         self.main_frame.setFrameShape(QFrame.StyledPanel)
         self.main_frame.setFrameShadow(QFrame.Raised)
-        self.gridLayout_2 = QGridLayout(self.main_frame)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.buttons_frame = QFrame(self.main_frame)
-        self.buttons_frame.setObjectName(u"buttons_frame")
+        self.gridLayout = QGridLayout(self.main_frame)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.title_label = QLabel(self.main_frame)
+        self.title_label.setObjectName(u"title_label")
+        self.title_label.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.title_label, 0, 0, 1, 1)
+
+        self.frame = QFrame(self.main_frame)
+        self.frame.setObjectName(u"frame")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.buttons_frame.sizePolicy().hasHeightForWidth())
-        self.buttons_frame.setSizePolicy(sizePolicy)
-        self.buttons_frame.setFrameShape(QFrame.StyledPanel)
-        self.buttons_frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout = QVBoxLayout(self.buttons_frame)
+        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
+        self.frame.setSizePolicy(sizePolicy)
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.run_test_button = QPushButton(self.buttons_frame)
-        self.run_test_button.setObjectName(u"run_test_button")
+        self.pushButton = QPushButton(self.frame)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setEnabled(False)
 
-        self.verticalLayout.addWidget(self.run_test_button)
+        self.verticalLayout.addWidget(self.pushButton)
 
-        self.new_test_button = QPushButton(self.buttons_frame)
-        self.new_test_button.setObjectName(u"new_test_button")
+        self.pushButton_2 = QPushButton(self.frame)
+        self.pushButton_2.setObjectName(u"pushButton_2")
 
-        self.verticalLayout.addWidget(self.new_test_button)
-
-        self.view_grades_button = QPushButton(self.buttons_frame)
-        self.view_grades_button.setObjectName(u"view_grades_button")
-
-        self.verticalLayout.addWidget(self.view_grades_button)
+        self.verticalLayout.addWidget(self.pushButton_2)
 
 
-        self.gridLayout_2.addWidget(self.buttons_frame, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.frame, 1, 0, 1, 1)
 
-        self.greeting_text = QLabel(self.main_frame)
-        self.greeting_text.setObjectName(u"greeting_text")
-        self.greeting_text.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_2.addWidget(self.greeting_text, 0, 1, 1, 1)
-
-        QWidget.setTabOrder(self.run_test_button, self.new_test_button)
-        QWidget.setTabOrder(self.new_test_button, self.view_grades_button)
 
         self.retranslateUi(main_window)
 
@@ -573,18 +567,14 @@ class Ui_main_window(object):
 
     def retranslateUi(self, main_window):
         main_window.setWindowTitle(QCoreApplication.translate("main_window", u"Form", None))
+        self.title_label.setText(QCoreApplication.translate("main_window", u"Create a test", None))
 #if QT_CONFIG(tooltip)
-        self.run_test_button.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Run a test that is available</p></body></html>", None))
+        self.pushButton.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a test by using a wizard</p><p>Not implemented yet</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
-        self.run_test_button.setText(QCoreApplication.translate("main_window", u"Run Test", None))
+        self.pushButton.setText(QCoreApplication.translate("main_window", u"Easy Mode", None))
 #if QT_CONFIG(tooltip)
-        self.new_test_button.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a new test</p></body></html>", None))
+        self.pushButton_2.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a test by writing python code in your editor</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
-        self.new_test_button.setText(QCoreApplication.translate("main_window", u"New Test", None))
-#if QT_CONFIG(tooltip)
-        self.view_grades_button.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>View the grades from tests</p></body></html>", None))
-#endif // QT_CONFIG(tooltip)
-        self.view_grades_button.setText(QCoreApplication.translate("main_window", u"View Grades", None))
-        self.greeting_text.setText(QCoreApplication.translate("main_window", u"Welcome to Py-Grader", None))
+        self.pushButton_2.setText(QCoreApplication.translate("main_window", u"Nerd Mode", None))
     # retranslateUi
 

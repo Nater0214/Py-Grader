@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>200</width>
-    <height>140</height>
+    <width>528</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -504,8 +504,8 @@ QAbstractSpinBox {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>200</width>
-     <height>140</height>
+     <width>241</width>
+     <height>161</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -514,7 +514,7 @@ QAbstractSpinBox {
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QGridLayout" name="gridLayout">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -527,8 +527,18 @@ QAbstractSpinBox {
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item row="1" column="1">
-     <widget class="QFrame" name="buttons_frame">
+    <item row="0" column="0">
+     <widget class="QLabel" name="title_label">
+      <property name="text">
+       <string>Create a test</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QFrame" name="frame">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -541,58 +551,36 @@ QAbstractSpinBox {
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
        <item>
-        <widget class="QPushButton" name="run_test_button">
+        <widget class="QPushButton" name="pushButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Run a test that is available&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create a test by using a wizard&lt;/p&gt;&lt;p&gt;Not implemented yet&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
-          <string>Run Test</string>
+          <string>Easy Mode</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="new_test_button">
+        <widget class="QPushButton" name="pushButton_2">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create a new test&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create a test by writing python code in your editor&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
-          <string>New Test</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="view_grades_button">
-         <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;View the grades from tests&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="text">
-          <string>View Grades</string>
+          <string>Nerd Mode</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="greeting_text">
-      <property name="text">
-       <string>Welcome to Py-Grader</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
  </widget>
- <tabstops>
-  <tabstop>run_test_button</tabstop>
-  <tabstop>new_test_button</tabstop>
-  <tabstop>view_grades_button</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

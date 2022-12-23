@@ -1,20 +1,20 @@
-# main.py
+# main.pyw
 # Py Grader
 # Makes it easy to grade an assignment based on test cases
 
 
 # Imports
-from sys import argv
+import sys
 from PySide6 import QtWidgets
 import gui
 
 
 # Definitions
 def main() -> None:
-    app = QtWidgets.QApplication(argv)
-    main_window = gui.main_window()
-    main_window.show()
-    app.exec()
+    app = QtWidgets.QApplication(sys.argv)
+    gui.create_windows()
+    gui.start_window.show()
+    sys.exit(app.exec())
 
 
 # Run
