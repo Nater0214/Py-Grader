@@ -6,6 +6,8 @@
 from PySide6.QtWidgets import QMainWindow
 from PySide6.QtCore import Slot
 
+from os import getcwd, system
+
 from gui import ui_startup
 from gui import ui_test_create
 
@@ -32,6 +34,9 @@ class TestCreateWindow(QMainWindow, ui_test_create.Ui_main_window):
         self.setupUi(self)
         self.setCentralWidget(self.main_frame)
         self.setWindowTitle("Py-Grader: Test Creation")
+        
+        # Button connections
+        self.nerd_mode_button.clicked.connect(open_nerd_mode)
 
 def create_windows() -> None:
     global start_window 
@@ -41,6 +46,13 @@ def create_windows() -> None:
     test_create_window = TestCreateWindow()
 
 
+# Button methods
+
 # Window changers
 def test_create_start() -> None:
     test_create_window.show()
+
+
+# Other button methods
+def open_nerd_mode() -> None:
+    system(f"code \"{getcwd()}\\tests\"")

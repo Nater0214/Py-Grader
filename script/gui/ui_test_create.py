@@ -22,7 +22,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(528, 300)
+        main_window.resize(200, 140)
         main_window.setStyleSheet(u"/*\n"
 "    I did not create this\n"
 "    This style was created by sommerc\n"
@@ -522,7 +522,7 @@ class Ui_main_window(object):
 "}")
         self.main_frame = QFrame(main_window)
         self.main_frame.setObjectName(u"main_frame")
-        self.main_frame.setGeometry(QRect(0, 0, 241, 161))
+        self.main_frame.setGeometry(QRect(0, 0, 200, 140))
         self.main_frame.setFrameShape(QFrame.StyledPanel)
         self.main_frame.setFrameShadow(QFrame.Raised)
         self.gridLayout = QGridLayout(self.main_frame)
@@ -545,16 +545,16 @@ class Ui_main_window(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.pushButton = QPushButton(self.frame)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setEnabled(False)
+        self.easy_mode_button = QPushButton(self.frame)
+        self.easy_mode_button.setObjectName(u"easy_mode_button")
+        self.easy_mode_button.setEnabled(False)
 
-        self.verticalLayout.addWidget(self.pushButton)
+        self.verticalLayout.addWidget(self.easy_mode_button)
 
-        self.pushButton_2 = QPushButton(self.frame)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.nerd_mode_button = QPushButton(self.frame)
+        self.nerd_mode_button.setObjectName(u"nerd_mode_button")
 
-        self.verticalLayout.addWidget(self.pushButton_2)
+        self.verticalLayout.addWidget(self.nerd_mode_button)
 
 
         self.gridLayout.addWidget(self.frame, 1, 0, 1, 1)
@@ -569,12 +569,12 @@ class Ui_main_window(object):
         main_window.setWindowTitle(QCoreApplication.translate("main_window", u"Form", None))
         self.title_label.setText(QCoreApplication.translate("main_window", u"Create a test", None))
 #if QT_CONFIG(tooltip)
-        self.pushButton.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a test by using a wizard</p><p>Not implemented yet</p></body></html>", None))
+        self.easy_mode_button.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a test by using a wizard</p><p>Not implemented yet</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
-        self.pushButton.setText(QCoreApplication.translate("main_window", u"Easy Mode", None))
+        self.easy_mode_button.setText(QCoreApplication.translate("main_window", u"Easy Mode", None))
 #if QT_CONFIG(tooltip)
-        self.pushButton_2.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a test by writing python code in your editor</p></body></html>", None))
+        self.nerd_mode_button.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a test by writing python code in vscode</p></body></html>", None))
 #endif // QT_CONFIG(tooltip)
-        self.pushButton_2.setText(QCoreApplication.translate("main_window", u"Nerd Mode", None))
+        self.nerd_mode_button.setText(QCoreApplication.translate("main_window", u"Nerd Mode", None))
     # retranslateUi
 

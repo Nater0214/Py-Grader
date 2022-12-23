@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>528</width>
-    <height>300</height>
+    <width>200</width>
+    <height>140</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -504,8 +504,8 @@ QAbstractSpinBox {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>241</width>
-     <height>161</height>
+     <width>200</width>
+     <height>140</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -553,7 +553,7 @@ QAbstractSpinBox {
       </property>
       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="easy_mode_button">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -566,9 +566,9 @@ QAbstractSpinBox {
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="nerd_mode_button">
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create a test by writing python code in your editor&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Create a test by writing python code in vscode&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="text">
           <string>Nerd Mode</string>
