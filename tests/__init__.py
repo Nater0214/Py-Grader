@@ -30,7 +30,7 @@ def get_test_infos() -> list[dict]:
     for test in tests:
         test_module = importlib.import_module(f".{test}", __name__)
         
-        test_module.INFO["file-name"] = test        
+        test_module.INFO["file-name"] = test + '.py'
         try:
             infos.append(test_module.INFO)
         except AttributeError:
@@ -63,7 +63,7 @@ def run_test(test_name: str) -> dict:
     test_for = test_info["for"]
     
     # Import test and get methods
-    test_module = importlib.import_module(f".{file_name}", __name__)
+    test_module = importlib.import_module(f".{file_name[:file_name.find('.py')]}", __name__)
     test_methods = [t[1] for t in [method for method in inspect.getmembers(test_module, inspect.isfunction)]]
     
     # Grades
@@ -73,7 +73,7 @@ def run_test(test_name: str) -> dict:
     # Grade each student
     for student in listdir(turnin_path := os.path.join("turnins", test_for)):
         # Set the grade numerator
-        grade_numerator = 0
+        grade_numerator = grade_denominator
         
         # Try to run the program
         try:
@@ -92,7 +92,7 @@ def run_test(test_name: str) -> dict:
             
             # Increment grade if test passed
             except AssertionError:
-                grade_numerator += 1
+                grade_numerator -= 1
             
             # If the test fails to run raise InvalidTestError
             except Exception:

@@ -3,13 +3,11 @@ INFO = {
     "for": "Hello-World-Test"
 }
 
-def always_true(program):
-    """Always returns true"""
-    
-    assert True # This isn't even necessary
-
-
-def always_false(program):
-    """Always returns false"""
-    
-    assert False
+def message_hello(program):
+    try:
+        if program.message == "Hello World!":
+            assert True
+        else:
+            assert False
+    except AttributeError:
+        assert False

@@ -527,13 +527,7 @@ class Ui_main_window(object):
         self.main_frame.setFrameShadow(QFrame.Raised)
         self.gridLayout = QGridLayout(self.main_frame)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.title_label = QLabel(self.main_frame)
-        self.title_label.setObjectName(u"title_label")
-        self.title_label.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.title_label, 0, 0, 1, 1)
-
+        self.gridLayout.setContentsMargins(6, 6, 6, 6)
         self.buttons_frame = QFrame(self.main_frame)
         self.buttons_frame.setObjectName(u"buttons_frame")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
@@ -566,6 +560,12 @@ class Ui_main_window(object):
 
         self.gridLayout.addWidget(self.line, 1, 0, 1, 1)
 
+        self.title_label = QLabel(self.main_frame)
+        self.title_label.setObjectName(u"title_label")
+        self.title_label.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.title_label, 0, 0, 1, 1)
+
 
         self.retranslateUi(main_window)
 
@@ -574,7 +574,6 @@ class Ui_main_window(object):
 
     def retranslateUi(self, main_window):
         main_window.setWindowTitle(QCoreApplication.translate("main_window", u"Py-Grader", None))
-        self.title_label.setText(QCoreApplication.translate("main_window", u"Create a test", None))
 #if QT_CONFIG(tooltip)
         self.easy_mode_button.setToolTip(QCoreApplication.translate("main_window", u"Create a test by using a wizard\n"
 "Not implemented yet", None))
@@ -584,5 +583,6 @@ class Ui_main_window(object):
         self.nerd_mode_button.setToolTip(QCoreApplication.translate("main_window", u"Create a test by writing python code in vscode", None))
 #endif // QT_CONFIG(tooltip)
         self.nerd_mode_button.setText(QCoreApplication.translate("main_window", u"Nerd Mode", None))
+        self.title_label.setText(QCoreApplication.translate("main_window", u"Create a test", None))
     # retranslateUi
 

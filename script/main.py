@@ -15,7 +15,7 @@ from PySide6 import QtWidgets
 def main() -> None:
     # Main
     
-    # Add tests directory to path
+    # Add directories to path
     sys.path.append(os.path.abspath("turnins"))
     
     # Create app
