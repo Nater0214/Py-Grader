@@ -534,30 +534,37 @@ class Ui_main_window(object):
 
         self.gridLayout.addWidget(self.title_label, 0, 0, 1, 1)
 
-        self.frame = QFrame(self.main_frame)
-        self.frame.setObjectName(u"frame")
+        self.buttons_frame = QFrame(self.main_frame)
+        self.buttons_frame.setObjectName(u"buttons_frame")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
-        self.frame.setSizePolicy(sizePolicy)
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout = QVBoxLayout(self.frame)
+        sizePolicy.setHeightForWidth(self.buttons_frame.sizePolicy().hasHeightForWidth())
+        self.buttons_frame.setSizePolicy(sizePolicy)
+        self.buttons_frame.setFrameShape(QFrame.StyledPanel)
+        self.buttons_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.buttons_frame)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.easy_mode_button = QPushButton(self.frame)
+        self.easy_mode_button = QPushButton(self.buttons_frame)
         self.easy_mode_button.setObjectName(u"easy_mode_button")
         self.easy_mode_button.setEnabled(False)
 
         self.verticalLayout.addWidget(self.easy_mode_button)
 
-        self.nerd_mode_button = QPushButton(self.frame)
+        self.nerd_mode_button = QPushButton(self.buttons_frame)
         self.nerd_mode_button.setObjectName(u"nerd_mode_button")
 
         self.verticalLayout.addWidget(self.nerd_mode_button)
 
 
-        self.gridLayout.addWidget(self.frame, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.buttons_frame, 2, 0, 1, 1)
+
+        self.line = QFrame(self.main_frame)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout.addWidget(self.line, 1, 0, 1, 1)
 
 
         self.retranslateUi(main_window)
@@ -566,14 +573,15 @@ class Ui_main_window(object):
     # setupUi
 
     def retranslateUi(self, main_window):
-        main_window.setWindowTitle(QCoreApplication.translate("main_window", u"Form", None))
+        main_window.setWindowTitle(QCoreApplication.translate("main_window", u"Py-Grader", None))
         self.title_label.setText(QCoreApplication.translate("main_window", u"Create a test", None))
 #if QT_CONFIG(tooltip)
-        self.easy_mode_button.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a test by using a wizard</p><p>Not implemented yet</p></body></html>", None))
+        self.easy_mode_button.setToolTip(QCoreApplication.translate("main_window", u"Create a test by using a wizard\n"
+"Not implemented yet", None))
 #endif // QT_CONFIG(tooltip)
         self.easy_mode_button.setText(QCoreApplication.translate("main_window", u"Easy Mode", None))
 #if QT_CONFIG(tooltip)
-        self.nerd_mode_button.setToolTip(QCoreApplication.translate("main_window", u"<html><head/><body><p>Create a test by writing python code in vscode</p></body></html>", None))
+        self.nerd_mode_button.setToolTip(QCoreApplication.translate("main_window", u"Create a test by writing python code in vscode", None))
 #endif // QT_CONFIG(tooltip)
         self.nerd_mode_button.setText(QCoreApplication.translate("main_window", u"Nerd Mode", None))
     # retranslateUi
