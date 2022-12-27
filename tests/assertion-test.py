@@ -1,5 +1,5 @@
 INFO = {
-    "name": "assertion Test",
+    "name": "Assertion Test",
     "for": "Hello-World-Test"
 }
 
