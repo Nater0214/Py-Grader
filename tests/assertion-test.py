@@ -1,5 +1,5 @@
 # Import test root
-import test_root
+from . import test_root
 
 # This is the info block, it is necessary to tell the test runner info about the test. You can follow the template to make your own.
 INFO = {

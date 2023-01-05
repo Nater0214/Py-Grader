@@ -23,6 +23,7 @@ def get_test_infos() -> list[dict]:
     files = listdir("tests")
     files.remove("__pycache__")
     files.remove("__init__.py")
+    files.remove("test_root.py")
     
     # Strip .py from each file and store in list
     tests = [file[:file.index('.py')] for file in files]
@@ -90,7 +91,7 @@ def run_test(test_name: str) -> dict:
         for test in tests:
             # Run test
             try:
-                result = test.run()
+                result = test.run(student_program)
                 
             # If the test fails to run raise InvalidTestError
             except Exception:

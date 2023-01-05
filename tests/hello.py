@@ -1,4 +1,4 @@
-import test_root
+from . import test_root
 
 INFO = {
     "name": "Hello World Test",

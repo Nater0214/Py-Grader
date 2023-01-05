@@ -30,7 +30,7 @@ class BaseTest:
 class CustomTest(BaseTest):
     """A decorator to create a custom test"""
     
-    def __init__(self, condition: function) -> None:
+    def __init__(self, condition: Callable) -> None:
         """Create a custom test by decorating a function"""
         
         super().__init__(condition)
