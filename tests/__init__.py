@@ -8,6 +8,7 @@ import inspect
 import os
 from fractions import Fraction
 from os import listdir
+from . import test_root
 
 
 # Definitions
@@ -64,16 +65,17 @@ def run_test(test_name: str) -> dict:
     
     # Import test and get methods
     test_module = importlib.import_module(f".{file_name[:file_name.find('.py')]}", __name__)
-    test_methods = [t[1] for t in [method for method in inspect.getmembers(test_module, inspect.isfunction)]]
+    tests = [t[1] for t in [var for var in inspect.getmembers(test_module, lambda v: isinstance(v, test_root.BaseTest))]]
+    tests: list[test_root.BaseTest]
     
     # Grades
-    grades = {}                           # The grades dictionary with the students' grades as Fraction objects
-    grade_denominator = len(test_methods) # The denominator of each grade; the amount of tests
+    grades = {}                    # The grades dictionary with the students' grades as Fraction objects
+    grade_denominator = len(tests) # The denominator of each grade; the amount of tests
     
     # Grade each student
     for student in listdir(turnin_path := os.path.join("turnins", test_for)):
         # Set the grade numerator
-        grade_numerator = grade_denominator
+        grade_numerator = 0
         
         # Try to run the program
         try:
@@ -85,18 +87,18 @@ def run_test(test_name: str) -> dict:
             continue
         
         # Test all cases with program
-        for method in test_methods:
-            # Run method
+        for test in tests:
+            # Run test
             try:
-                method(student_program)
-            
-            # Increment grade if test passed
-            except AssertionError:
-                grade_numerator -= 1
-            
+                result = test.run()
+                
             # If the test fails to run raise InvalidTestError
             except Exception:
                 raise InvalidTestError("Test method raised an exception")
+
+            # Increment grade if test passes
+            if result:
+                grade_numerator += 1
         
         # Give student grade
         grades[student] = Fraction(grade_numerator, grade_denominator)
