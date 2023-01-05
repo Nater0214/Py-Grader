@@ -1,2 +1,2 @@
 :: Run in project root directoty
-py .\scripts\main.py
+py .\script\main.py
