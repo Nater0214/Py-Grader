@@ -5,4 +5,4 @@ INFO = {
     "for": "Hello-World-Test"
 }
 
-message_hello = test_root.IsEqualTest("message", "Hello World")
+message_hello = test_root.IsEqualTest("message", "Hello World!")
