@@ -523,30 +523,6 @@ QAbstractSpinBox {
     <item row="4" column="2" rowspan="2" colspan="2">
      <widget class="QListWidget" name="tests_list"/>
     </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="refresh_button">
-      <property name="text">
-       <string>Refresh</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" rowspan="4">
-     <widget class="QLabel" name="title_label">
-      <property name="text">
-       <string>Run a test</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Your tests:</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="2" colspan="2">
      <widget class="Line" name="line_2">
       <property name="orientation">
@@ -554,10 +530,34 @@ QAbstractSpinBox {
       </property>
      </widget>
     </item>
-    <item row="1" column="1" rowspan="5">
+    <item row="2" column="2">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Your tests:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="refresh_button">
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" rowspan="4">
      <widget class="Line" name="line">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" rowspan="3">
+     <widget class="QLabel" name="title_label">
+      <property name="text">
+       <string>Run a test</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
