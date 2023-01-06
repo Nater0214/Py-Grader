@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'test_run.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.4.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -23,7 +23,7 @@ class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(300, 210)
+        main_window.resize(350, 210)
         main_window.setStyleSheet(u"/*\n"
 "    I did not create this\n"
 "    This style was created by sommerc\n"
@@ -523,19 +523,12 @@ class Ui_main_window(object):
 "}")
         self.main_frame = QFrame(main_window)
         self.main_frame.setObjectName(u"main_frame")
-        self.main_frame.setGeometry(QRect(0, 0, 300, 210))
+        self.main_frame.setGeometry(QRect(0, 0, 350, 210))
         self.main_frame.setFrameShape(QFrame.StyledPanel)
         self.main_frame.setFrameShadow(QFrame.Raised)
         self.gridLayout = QGridLayout(self.main_frame)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(6, 6, 6, 6)
-        self.line_2 = QFrame(self.main_frame)
-        self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.HLine)
-        self.line_2.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout.addWidget(self.line_2, 1, 2, 1, 2)
-
         self.title_label = QLabel(self.main_frame)
         self.title_label.setObjectName(u"title_label")
         self.title_label.setAlignment(Qt.AlignCenter)
@@ -559,15 +552,22 @@ class Ui_main_window(object):
 
         self.gridLayout.addWidget(self.line, 0, 1, 4, 1)
 
-        self.tests_list = QListWidget(self.main_frame)
-        self.tests_list.setObjectName(u"tests_list")
-
-        self.gridLayout.addWidget(self.tests_list, 2, 2, 2, 2)
-
         self.refresh_button = QPushButton(self.main_frame)
         self.refresh_button.setObjectName(u"refresh_button")
 
         self.gridLayout.addWidget(self.refresh_button, 0, 3, 1, 1)
+
+        self.line_2 = QFrame(self.main_frame)
+        self.line_2.setObjectName(u"line_2")
+        self.line_2.setFrameShape(QFrame.HLine)
+        self.line_2.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout.addWidget(self.line_2, 1, 2, 1, 2)
+
+        self.tests_list = QListWidget(self.main_frame)
+        self.tests_list.setObjectName(u"tests_list")
+
+        self.gridLayout.addWidget(self.tests_list, 2, 2, 2, 2)
 
 
         self.retranslateUi(main_window)

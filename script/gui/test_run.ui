@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
+    <width>350</width>
     <height>210</height>
    </rect>
   </property>
@@ -504,7 +504,7 @@ QAbstractSpinBox {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>300</width>
+     <width>350</width>
      <height>210</height>
     </rect>
    </property>
@@ -527,13 +527,6 @@ QAbstractSpinBox {
     <property name="bottomMargin">
      <number>6</number>
     </property>
-    <item row="1" column="2" colspan="2">
-     <widget class="Line" name="line_2">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0" rowspan="3">
      <widget class="QLabel" name="title_label">
       <property name="text">
@@ -565,15 +558,22 @@ QAbstractSpinBox {
       </property>
      </widget>
     </item>
-    <item row="2" column="2" rowspan="2" colspan="2">
-     <widget class="QListWidget" name="tests_list"/>
-    </item>
     <item row="0" column="3">
      <widget class="QPushButton" name="refresh_button">
       <property name="text">
        <string>Refresh</string>
       </property>
      </widget>
+    </item>
+    <item row="1" column="2" colspan="2">
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2" rowspan="2" colspan="2">
+     <widget class="QListWidget" name="tests_list"/>
     </item>
    </layout>
   </widget>
