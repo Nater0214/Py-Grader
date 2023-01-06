@@ -24,7 +24,6 @@ class StartWindow(QMainWindow, ui_startup.Ui_main_window):
         
         super(StartWindow, self).__init__()
         self.setupUi(self)
-        self.setCentralWidget(self.main_frame)
         
         self.app = app
         
@@ -56,7 +55,6 @@ class TestCreateWindow(QMainWindow, ui_test_create.Ui_main_window):
         
         super(TestCreateWindow, self).__init__()
         self.setupUi(self)
-        self.setCentralWidget(self.main_frame)
         
         # Button connections
         self.nerd_mode_button.clicked.connect(self.open_nerd_mode)
@@ -74,7 +72,6 @@ class TestRunWindow(QMainWindow, ui_test_run.Ui_main_window):
         
         super(TestRunWindow, self).__init__()
         self.setupUi(self)
-        self.setCentralWidget(self.main_frame)
         self.display_tests()
         
         # Button connections
@@ -109,7 +106,7 @@ class TestResultsWindow(QMainWindow, ui_test_results.Ui_main_window):
         
         super(TestResultsWindow, self).__init__()
         self.setupUi(self)
-        self.setCentralWidget(self.main_frame)
+
     
     def show(self, info: dict, grades: dict) -> None:
         """Show the window with the relevant information"""

@@ -16,13 +16,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
-    QListWidget, QListWidgetItem, QSizePolicy, QWidget)
+    QListWidget, QListWidgetItem, QMainWindow, QSizePolicy,
+    QWidget)
 
 class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(400, 210)
+        main_window.resize(400, 280)
         main_window.setStyleSheet(u"/*\n"
 "    I did not create this\n"
 "    This style was created by sommerc\n"
@@ -520,57 +521,53 @@ class Ui_main_window(object):
 "    border-radius: 2px;\n"
 "    min-width: 50px;\n"
 "}")
-        self.main_frame = QFrame(main_window)
-        self.main_frame.setObjectName(u"main_frame")
-        self.main_frame.setGeometry(QRect(0, 0, 400, 210))
-        self.main_frame.setFrameShape(QFrame.StyledPanel)
-        self.main_frame.setFrameShadow(QFrame.Raised)
-        self.gridLayout = QGridLayout(self.main_frame)
-        self.gridLayout.setSpacing(6)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(6, 6, 6, 6)
-        self.line = QFrame(self.main_frame)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout.addWidget(self.line, 1, 0, 1, 3)
-
-        self.subtitle_label = QLabel(self.main_frame)
-        self.subtitle_label.setObjectName(u"subtitle_label")
-        self.subtitle_label.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.subtitle_label, 2, 0, 1, 1)
-
-        self.title_label = QLabel(self.main_frame)
-        self.title_label.setObjectName(u"title_label")
-        self.title_label.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.title_label, 0, 0, 1, 3)
-
-        self.subtitle_label_2 = QLabel(self.main_frame)
-        self.subtitle_label_2.setObjectName(u"subtitle_label_2")
-        self.subtitle_label_2.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.subtitle_label_2, 2, 2, 1, 1)
-
-        self.line_2 = QFrame(self.main_frame)
+        self.central_widget = QWidget(main_window)
+        self.central_widget.setObjectName(u"central_widget")
+        self.gridLayout_3 = QGridLayout(self.central_widget)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.line_2 = QFrame(self.central_widget)
         self.line_2.setObjectName(u"line_2")
         self.line_2.setFrameShape(QFrame.VLine)
         self.line_2.setFrameShadow(QFrame.Sunken)
 
-        self.gridLayout.addWidget(self.line_2, 2, 1, 2, 1)
+        self.gridLayout_3.addWidget(self.line_2, 2, 2, 2, 1)
 
-        self.grades_list = QListWidget(self.main_frame)
-        self.grades_list.setObjectName(u"grades_list")
+        self.subtitle_label_2 = QLabel(self.central_widget)
+        self.subtitle_label_2.setObjectName(u"subtitle_label_2")
+        self.subtitle_label_2.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.grades_list, 3, 2, 1, 1)
+        self.gridLayout_3.addWidget(self.subtitle_label_2, 2, 3, 1, 1)
 
-        self.info_list = QListWidget(self.main_frame)
+        self.info_list = QListWidget(self.central_widget)
         self.info_list.setObjectName(u"info_list")
 
-        self.gridLayout.addWidget(self.info_list, 3, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.info_list, 3, 1, 1, 1)
 
+        self.subtitle_label = QLabel(self.central_widget)
+        self.subtitle_label.setObjectName(u"subtitle_label")
+        self.subtitle_label.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.subtitle_label, 2, 1, 1, 1)
+
+        self.line = QFrame(self.central_widget)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout_3.addWidget(self.line, 1, 1, 1, 3)
+
+        self.grades_list = QListWidget(self.central_widget)
+        self.grades_list.setObjectName(u"grades_list")
+
+        self.gridLayout_3.addWidget(self.grades_list, 3, 3, 1, 1)
+
+        self.title_label = QLabel(self.central_widget)
+        self.title_label.setObjectName(u"title_label")
+        self.title_label.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.title_label, 0, 1, 1, 3)
+
+        main_window.setCentralWidget(self.central_widget)
 
         self.retranslateUi(main_window)
 
@@ -579,8 +576,8 @@ class Ui_main_window(object):
 
     def retranslateUi(self, main_window):
         main_window.setWindowTitle(QCoreApplication.translate("main_window", u"Py-Grader", None))
+        self.subtitle_label_2.setText(QCoreApplication.translate("main_window", u"Grades", None))
         self.subtitle_label.setText(QCoreApplication.translate("main_window", u"Test Info", None))
         self.title_label.setText(QCoreApplication.translate("main_window", u"Test Results", None))
-        self.subtitle_label_2.setText(QCoreApplication.translate("main_window", u"Grades", None))
     # retranslateUi
 

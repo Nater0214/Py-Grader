@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>main_window</class>
- <widget class="QWidget" name="main_window">
+ <widget class="QMainWindow" name="main_window">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>210</height>
+    <height>280</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -499,65 +499,16 @@ QAbstractSpinBox {
     min-width: 50px;
 }</string>
   </property>
-  <widget class="QFrame" name="main_frame">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>210</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <property name="leftMargin">
-     <number>6</number>
-    </property>
-    <property name="topMargin">
-     <number>6</number>
-    </property>
-    <property name="rightMargin">
-     <number>6</number>
-    </property>
-    <property name="bottomMargin">
-     <number>6</number>
-    </property>
-    <property name="spacing">
-     <number>6</number>
-    </property>
-    <item row="1" column="0" colspan="3">
-     <widget class="Line" name="line">
+  <widget class="QWidget" name="central_widget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="2" column="2" rowspan="2">
+     <widget class="Line" name="line_2">
       <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <enum>Qt::Vertical</enum>
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="subtitle_label">
-      <property name="text">
-       <string>Test Info</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="QLabel" name="title_label">
-      <property name="text">
-       <string>Test Results</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
+    <item row="2" column="3">
      <widget class="QLabel" name="subtitle_label_2">
       <property name="text">
        <string>Grades</string>
@@ -567,18 +518,38 @@ QAbstractSpinBox {
       </property>
      </widget>
     </item>
-    <item row="2" column="1" rowspan="2">
-     <widget class="Line" name="line_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+    <item row="3" column="1">
+     <widget class="QListWidget" name="info_list"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="subtitle_label">
+      <property name="text">
+       <string>Test Info</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
+    <item row="1" column="1" colspan="3">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
      <widget class="QListWidget" name="grades_list"/>
     </item>
-    <item row="3" column="0">
-     <widget class="QListWidget" name="info_list"/>
+    <item row="0" column="1" colspan="3">
+     <widget class="QLabel" name="title_label">
+      <property name="text">
+       <string>Test Results</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'startup.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.4.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -16,7 +16,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
-    QPushButton, QSizePolicy, QVBoxLayout, QWidget)
+    QMainWindow, QPushButton, QSizePolicy, QWidget)
 
 class Ui_main_window(object):
     def setupUi(self, main_window):
@@ -520,59 +520,41 @@ class Ui_main_window(object):
 "    border-radius: 2px;\n"
 "    min-width: 50px;\n"
 "}")
-        self.main_frame = QFrame(main_window)
-        self.main_frame.setObjectName(u"main_frame")
-        self.main_frame.setGeometry(QRect(0, 0, 200, 140))
-        self.main_frame.setFrameShape(QFrame.StyledPanel)
-        self.main_frame.setFrameShadow(QFrame.Raised)
-        self.gridLayout_2 = QGridLayout(self.main_frame)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(6, 6, 6, 6)
-        self.buttons_frame = QFrame(self.main_frame)
-        self.buttons_frame.setObjectName(u"buttons_frame")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.buttons_frame.sizePolicy().hasHeightForWidth())
-        self.buttons_frame.setSizePolicy(sizePolicy)
-        self.buttons_frame.setFrameShape(QFrame.StyledPanel)
-        self.buttons_frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout = QVBoxLayout(self.buttons_frame)
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.run_test_button = QPushButton(self.buttons_frame)
-        self.run_test_button.setObjectName(u"run_test_button")
-
-        self.verticalLayout.addWidget(self.run_test_button)
-
-        self.new_test_button = QPushButton(self.buttons_frame)
-        self.new_test_button.setObjectName(u"new_test_button")
-
-        self.verticalLayout.addWidget(self.new_test_button)
-
-        self.view_grades_button = QPushButton(self.buttons_frame)
-        self.view_grades_button.setObjectName(u"view_grades_button")
-        self.view_grades_button.setEnabled(False)
-
-        self.verticalLayout.addWidget(self.view_grades_button)
-
-
-        self.gridLayout_2.addWidget(self.buttons_frame, 2, 1, 1, 1)
-
-        self.greeting_text = QLabel(self.main_frame)
-        self.greeting_text.setObjectName(u"greeting_text")
-        self.greeting_text.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_2.addWidget(self.greeting_text, 0, 1, 1, 1)
-
-        self.line = QFrame(self.main_frame)
+        self.central_widget = QWidget(main_window)
+        self.central_widget.setObjectName(u"central_widget")
+        self.gridLayout = QGridLayout(self.central_widget)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.gridLayout.setContentsMargins(6, 6, 6, 6)
+        self.line = QFrame(self.central_widget)
         self.line.setObjectName(u"line")
         self.line.setFrameShape(QFrame.HLine)
         self.line.setFrameShadow(QFrame.Sunken)
 
-        self.gridLayout_2.addWidget(self.line, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.line, 1, 0, 1, 2)
 
-        QWidget.setTabOrder(self.run_test_button, self.new_test_button)
-        QWidget.setTabOrder(self.new_test_button, self.view_grades_button)
+        self.run_test_button = QPushButton(self.central_widget)
+        self.run_test_button.setObjectName(u"run_test_button")
+
+        self.gridLayout.addWidget(self.run_test_button, 2, 0, 1, 2)
+
+        self.greeting_text = QLabel(self.central_widget)
+        self.greeting_text.setObjectName(u"greeting_text")
+        self.greeting_text.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.greeting_text, 0, 0, 1, 2)
+
+        self.new_test_button = QPushButton(self.central_widget)
+        self.new_test_button.setObjectName(u"new_test_button")
+
+        self.gridLayout.addWidget(self.new_test_button, 3, 0, 1, 2)
+
+        self.view_grades_button = QPushButton(self.central_widget)
+        self.view_grades_button.setObjectName(u"view_grades_button")
+        self.view_grades_button.setEnabled(False)
+
+        self.gridLayout.addWidget(self.view_grades_button, 4, 0, 1, 2)
+
+        main_window.setCentralWidget(self.central_widget)
 
         self.retranslateUi(main_window)
 
@@ -585,6 +567,7 @@ class Ui_main_window(object):
         self.run_test_button.setToolTip(QCoreApplication.translate("main_window", u"Run a test that is available", None))
 #endif // QT_CONFIG(tooltip)
         self.run_test_button.setText(QCoreApplication.translate("main_window", u"Run Test", None))
+        self.greeting_text.setText(QCoreApplication.translate("main_window", u"Welcome to Py-Grader", None))
 #if QT_CONFIG(tooltip)
         self.new_test_button.setToolTip(QCoreApplication.translate("main_window", u"Create a new test", None))
 #endif // QT_CONFIG(tooltip)
@@ -594,6 +577,5 @@ class Ui_main_window(object):
 "Not implemented", None))
 #endif // QT_CONFIG(tooltip)
         self.view_grades_button.setText(QCoreApplication.translate("main_window", u"View Grades", None))
-        self.greeting_text.setText(QCoreApplication.translate("main_window", u"Welcome to Py-Grader", None))
     # retranslateUi
 

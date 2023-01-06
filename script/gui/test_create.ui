@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>main_window</class>
- <widget class="QWidget" name="main_window">
+ <widget class="QMainWindow" name="main_window">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -499,21 +499,7 @@ QAbstractSpinBox {
     min-width: 50px;
 }</string>
   </property>
-  <widget class="QFrame" name="main_frame">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>200</width>
-     <height>140</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
+  <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <property name="leftMargin">
      <number>6</number>
@@ -528,51 +514,16 @@ QAbstractSpinBox {
      <number>6</number>
     </property>
     <item row="2" column="0">
-     <widget class="QFrame" name="buttons_frame">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+     <widget class="QPushButton" name="easy_mode_button">
+      <property name="enabled">
+       <bool>false</bool>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
-       <item>
-        <widget class="QPushButton" name="easy_mode_button">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="toolTip">
-          <string>Create a test by using a wizard
+      <property name="toolTip">
+       <string>Create a test by using a wizard
 Not implemented yet</string>
-         </property>
-         <property name="text">
-          <string>Easy Mode</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="nerd_mode_button">
-         <property name="toolTip">
-          <string>Create a test by writing python code in vscode</string>
-         </property>
-         <property name="text">
-          <string>Nerd Mode</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="text">
+       <string>Easy Mode</string>
       </property>
      </widget>
     </item>
@@ -583,6 +534,23 @@ Not implemented yet</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="nerd_mode_button">
+      <property name="toolTip">
+       <string>Create a test by writing python code in vscode</string>
+      </property>
+      <property name="text">
+       <string>Nerd Mode</string>
       </property>
      </widget>
     </item>

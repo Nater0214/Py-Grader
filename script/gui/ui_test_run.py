@@ -16,14 +16,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
-    QListWidget, QListWidgetItem, QPushButton, QSizePolicy,
-    QWidget)
+    QListWidget, QListWidgetItem, QMainWindow, QPushButton,
+    QSizePolicy, QWidget)
 
 class Ui_main_window(object):
     def setupUi(self, main_window):
         if not main_window.objectName():
             main_window.setObjectName(u"main_window")
-        main_window.resize(350, 210)
+        main_window.resize(350, 255)
         main_window.setStyleSheet(u"/*\n"
 "    I did not create this\n"
 "    This style was created by sommerc\n"
@@ -521,54 +521,52 @@ class Ui_main_window(object):
 "    border-radius: 2px;\n"
 "    min-width: 50px;\n"
 "}")
-        self.main_frame = QFrame(main_window)
-        self.main_frame.setObjectName(u"main_frame")
-        self.main_frame.setGeometry(QRect(0, 0, 350, 210))
-        self.main_frame.setFrameShape(QFrame.StyledPanel)
-        self.main_frame.setFrameShadow(QFrame.Raised)
-        self.gridLayout = QGridLayout(self.main_frame)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(6, 6, 6, 6)
-        self.title_label = QLabel(self.main_frame)
+        self.central_widget = QWidget(main_window)
+        self.central_widget.setObjectName(u"central_widget")
+        self.gridLayout_2 = QGridLayout(self.central_widget)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(6, 6, 6, 6)
+        self.test_run_button = QPushButton(self.central_widget)
+        self.test_run_button.setObjectName(u"test_run_button")
+
+        self.gridLayout_2.addWidget(self.test_run_button, 5, 0, 1, 1)
+
+        self.tests_list = QListWidget(self.central_widget)
+        self.tests_list.setObjectName(u"tests_list")
+
+        self.gridLayout_2.addWidget(self.tests_list, 4, 2, 2, 2)
+
+        self.refresh_button = QPushButton(self.central_widget)
+        self.refresh_button.setObjectName(u"refresh_button")
+
+        self.gridLayout_2.addWidget(self.refresh_button, 1, 3, 1, 1)
+
+        self.title_label = QLabel(self.central_widget)
         self.title_label.setObjectName(u"title_label")
         self.title_label.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout.addWidget(self.title_label, 0, 0, 3, 1)
+        self.gridLayout_2.addWidget(self.title_label, 1, 0, 4, 1)
 
-        self.label = QLabel(self.main_frame)
+        self.label = QLabel(self.central_widget)
         self.label.setObjectName(u"label")
 
-        self.gridLayout.addWidget(self.label, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.label, 1, 2, 1, 1)
 
-        self.test_run_button = QPushButton(self.main_frame)
-        self.test_run_button.setObjectName(u"test_run_button")
-
-        self.gridLayout.addWidget(self.test_run_button, 3, 0, 1, 1)
-
-        self.line = QFrame(self.main_frame)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.VLine)
-        self.line.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout.addWidget(self.line, 0, 1, 4, 1)
-
-        self.refresh_button = QPushButton(self.main_frame)
-        self.refresh_button.setObjectName(u"refresh_button")
-
-        self.gridLayout.addWidget(self.refresh_button, 0, 3, 1, 1)
-
-        self.line_2 = QFrame(self.main_frame)
+        self.line_2 = QFrame(self.central_widget)
         self.line_2.setObjectName(u"line_2")
         self.line_2.setFrameShape(QFrame.HLine)
         self.line_2.setFrameShadow(QFrame.Sunken)
 
-        self.gridLayout.addWidget(self.line_2, 1, 2, 1, 2)
+        self.gridLayout_2.addWidget(self.line_2, 3, 2, 1, 2)
 
-        self.tests_list = QListWidget(self.main_frame)
-        self.tests_list.setObjectName(u"tests_list")
+        self.line = QFrame(self.central_widget)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.VLine)
+        self.line.setFrameShadow(QFrame.Sunken)
 
-        self.gridLayout.addWidget(self.tests_list, 2, 2, 2, 2)
+        self.gridLayout_2.addWidget(self.line, 1, 1, 5, 1)
 
+        main_window.setCentralWidget(self.central_widget)
 
         self.retranslateUi(main_window)
 
@@ -577,9 +575,9 @@ class Ui_main_window(object):
 
     def retranslateUi(self, main_window):
         main_window.setWindowTitle(QCoreApplication.translate("main_window", u"Py-Grader", None))
-        self.title_label.setText(QCoreApplication.translate("main_window", u"Run a test", None))
-        self.label.setText(QCoreApplication.translate("main_window", u"Your tests:", None))
         self.test_run_button.setText(QCoreApplication.translate("main_window", u"Run Test", None))
         self.refresh_button.setText(QCoreApplication.translate("main_window", u"Refresh", None))
+        self.title_label.setText(QCoreApplication.translate("main_window", u"Run a test", None))
+        self.label.setText(QCoreApplication.translate("main_window", u"Your tests:", None))
     # retranslateUi
 
