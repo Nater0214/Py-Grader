@@ -6,8 +6,11 @@
 import importlib
 import inspect
 import os
+import sys
 from fractions import Fraction
+from io import StringIO
 from os import listdir
+
 from . import test_root
 
 
@@ -78,20 +81,29 @@ def run_test(test_name: str) -> dict:
         # Set the grade numerator
         grade_numerator = 0
         
+        # Capture stdout
+        old_stdout = sys.stdout
+        sys.stdout = StringIO()
+        
         # Try to run the program
         try:
             student_program = importlib.import_module(os.path.join(turnin_path, student, 'main').replace("\\", "."))
         
         # Set grade to 0 if it fails to run and move to next student
         except Exception:
+            sys.stdout = old_stdout
             grades[student] = Fraction(0, grade_denominator)
             continue
+        
+        # Get captured stdout and reset stdout
+        printed_output = sys.stdout.getvalue().split("\n")
+        sys.stdout = old_stdout
         
         # Test all cases with program
         for test in tests:
             # Run test
             try:
-                result = test.run(student_program)
+                result = test.run(student_program, printed_output)
                 
             # If the test fails to run raise InvalidTestError
             except Exception:
